@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>WebGL</h1>
+					<aside class="notes">Hi, my name is Eugene Tsalko, i'm a student in RSSchool and today i'd like to talk to you about WebGL.</aside>
+				</section>
+
+				<section> <span style="color:chocolate; font-weight: bolder">WebGL (Web Graphics Library) </span>
+					- is a JS API for implementing interactive 2D and 3D vector graphics in the browser.
+					<aside class="notes">
+						WebGL or Web Graphics Library - is a javascript API for implementing interactive 2D and 3D vector graphics in the browser.
+					</aside>
+				</section>
+
+				<section>
+					It allows to run graphics with the client's GPU inside an HTML 
+					canvas tag with no need for external plugins.
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+					<canvas></canvas>
+					</code></pre>
+					<img src="./assets/gpu.png" alt="gpu" style="width: 500px;">
+				  <aside class="notes">It allows developers to run hardware accelerated graphics with the client's GPU directly inside an HTML 
+						canvas tag without the need for external plugins.</aside>
+				</section>
+
+				<section>History:
+					<section>
+						<ul>
+							<li>WebGL - Mozilla Foundation's open web standard.</li>
+						</ul>
+						<aside class="notes">A little bit from history:
+							1)WebGL is a Mozilla's foundation's cross-platform, royalty-free open web standard
+						</aside>
+					</section>
+					<section>
+						<ul>
+							<li>WebGL - Mozilla Foundation's open web standard.</li>
+							<li>Written in JS and OpenGL ES Shading language.</li>
+						</ul>
+						<aside class="notes">
+							2) WebGL programs consist of control code written in JavaScript and shader code written in OpenGL ES Shading Language, a language similar to C or C++, 
+							and is executed on a computer's GPU.
+						</aside>
+					</section>
+					<section>
+						<ul>
+							<li>WebGL - Mozilla Foundation's open web standard.</li>
+							<li>Written in JS and OpenGL ES Shading language.</li>
+							<li>Initial release - 2011, stable release - 2017.</li>
+						</ul>
+						<aside class="notes">
+							3) Initial release was in March of 2011, stable release - in January of 2017.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					Where is WebGL used?
+					<aside class="notes">So, where is WebGL used?</aside>
+				</section>
+				
+				<section>
+					<p>3D web design:</p>
+					<ul>
+						<li><a href="https://www.kubota.com/futurecube/">kubota.com</a></li>
+						<li><a href="https://atmos.leeroy.ca/">atmos.leeroy.ca</a></li>
+						<li><a href="https://hennessy-house-of-moves.hello-jury.com/">hennessy-house-of-moves.hello-jury.com</a></li>
+					</ul>
+          <aside class="notes">
+						3D web design - it allows you to add complex and smooth animations with 3D objects. Here are some examples.
+					</aside>
+				</section>
+
+				<section>
+					<p>Data vizualization:</p>
+					<section>
+						<img src="./assets/data-vis-1.png" alt="" style="width: 600px;">
+						<aside class="notes">
+							Data visualization - D3.js, Springy.js, Raphael.js and other are some of the various 
+							libraries available for creating online data visualizations and infographics.
+						</aside>
+					</section>
+					<section><img src="./assets/data-vis-2.png" alt="" style="width: 800px;"></section>
+					<section><img src="./assets/data-vis-3.png" alt="" style="width: 800px;"></section>
+
+				</section>
+
+				<section>
+					<p>Maps:</p>
+					<section>
+						<img src="./assets/google-maps-1.png" alt="">
+						<a href="https://www.google.by/maps/">Google Maps</a>
+						<aside class="notes">
+							Maps - WebGL is used to render Graphics in everyday tools like Google Maps and Google Earth.
+							Any form of topographic map can greatly benefit from 3D representations.
+						</aside>
+					</section>
+					<section>
+						<img src="./assets/google-maps-2.png" alt="">
+						<a href="https://earth.google.com/web/">Google Earth</a>
+					</section>
+				</section>
+
+				<section>
+					<p>Architecture/floorplanning:</p>
+					<section>
+						<img src="./assets/roomle.png" alt="">
+						<a href="https://www.roomle.com/en/floorplanner">Roomle</a>
+						<aside class="notes">
+							Architecture - The field of architecture and 3D are two things that goes hand in hand and 
+							3D viewing is becoming more widely available in the architecture industry.
+						</aside>
+					</section>
+					<section>
+						<img src="./assets/matterport.png" alt="">
+						<a href="https://matterport.com/">Matterport</a>
+					</section>
+					<section>
+						<img src="./assets/shapespark.png" alt="">
+						<a href="https://www.shapespark.com/">Shapespark</a>
+					</section>
+				</section>
+
+				<section>
+					<ul>
+						<li>Web-based games</li>
+						<li>Medicine</li>
+						<li>E-commerce</li>
+						<li>Artwork</li>
+						<li>etc.</li>
+					</ul>
+					<aside class="notes">
+						- Games are the first WebGL example that comes to mind, 
+						the two most popular game engines for the web platform are Unity and PlayCanvas.
+						- In medicine you can make interactive 3D models of the internal organs of living beings with the help of WebGL.
+						- In E-commerce 3D graphics have a multitude of uses, ranging from simple product presentations, 
+						to product customization and realistic previews of different materials.
+						- Artwork - this may be one of the most important applications of WebGL in general - the creativity of artists 
+						and illustrators across the globe combined with the power and freedom that WebGL provides.
+					
+					</aside>
+				</section>
+
+				<section>How it works?
+					<aside class="notes">To understand how WebGL works it helps to first understand basic 3D theory and the rendering pipeline.
+					</aside>
+				</section>
+
+				<section>
+					<p>3D scene:</p>
+					<img src="./assets/3d-2.png" alt="" style="width: 600px;">
+					<aside class="notes">In fact, all WebGL can do is draw triangles. But it can draw them very quickly and in large numbers. 
+						If you want a square, connect two triangles. You want a line? OK, it's just a few triangles connected in series.
+						In a 3D scene every point is a vertex identified by an X, Y and Z coordinates.</aside>
+				</section>
+					
+				<section>
+					<p>3D scene render:</p>
+					<img src="./assets/3d-3.png" alt="" style="width: 800px;">
+					<aside class="notes">The vertices are then connected together to form a bunch of little triangles, known as primitives</aside>
+				</section>
+
+				<section>
+					<p>3D scene render:</p>
+					<img src="./assets/3d-4.png" alt="" style="width: 800px;">
+					<aside class="notes">Then a light source bounces off of them to create the appearance of shadows and depth perception. They are then rasterized to convert a 3D vector graphic into a projection of a 2D pixel, 
+						which tricks our brains into seeing a 3D object on a two-dimensional computer screen.</aside>
+				</section>
+
+				<section>
+					<p>3D scene shading:</p>
+					<img src="./assets/3d-5.png" alt="" style="width: 800px;">
+					<aside class="notes">This pipeline can be customized by writing shaders, 
+						which are just functions that tells a computer how to draw pixels on the screen.
+						Shading requires the computer to perform a ton of linear algebra or matrix multiplication to render graphics smoothly at 60fps.
+						It's often too much for the CPU to handle by itself which is why we have GPUs to distribute the calculations more efficiently.
+						WebGL allows us to process graphics on a GPU and it's based on a library that's been around since 1992 called OpenGL.
+					</aside>
+				</section>
+
+				<section>
+					<p>Start drawing:</p>
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						const canvas = document.querySelector("#myCanvas");
+						const gl = canvas.getContext("webGl");
+						</code></pre>
+						<aside class="notes">To get started you just need to grab an HTML canvas in the DOM and then get it's WebGL context to start drawing.
+						</aside>
+				</section>
+
+				<section>
+					<p>JS control code:</p>
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						function drawIn3d() {
+							webGlUtils.resizeCanvasToDisplaySize(gl.canvas);
+
+							const primitive = gl.TRIANGLES;
+
+							gl.drawArrays(primitive, 0, 5);
+						}
+						</code></pre>
+						<aside class="notes">The main program code is written in JavaScript, but shaders are written in the OpenGL ES-shading language.
+						</aside>
+				</section>
+
+				<section>
+					<p>OpenGL shaders:</p>
+					<img src="./assets/3d-4.png" alt="" style="width: 800px;">
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						attribute vec2 a_position;
+
+						uniform vec2 u_resolution;
+						uniform vec2 u_translation;
+
+						void main() {
+							vec2 position = a_position + u_translation;
+							vec2 zeroToOne = position | u_resolution;
+						}
+						</code></pre>
+						<aside class="notes">A Shader will take information about a vertex or fragment 
+							and use the GPU to calculate the data required to render it as a pixel on the screen.
+						</aside>
+				</section>
+
+				<section>
+					<p>This looks hard...</p>
+					<img src="./assets/hard.png" alt="">
+					<aside class="notes">Luckily you don't need to write shaders by hand. To start adding 3D graphics to 
+						your website you can use libraries like Three.js or tools like Spline.Design to quickly design 3D experiences without
+						 much underlying knowledge of WebGL.
+					</aside>
+				</section>
+
+				<section>
+					<p>Libraries/tools:</p>
+					<ul>
+						<li><a href="https://threejs.org/">three.js</a></li>
+						<li><a href="https://spline.design/">spline.design</a></li>
+					</ul>
+					<aside class="notes">
+						This slide contains links to the tools I mentioned earlier.
+					</aside>
+				</section>
+
+				<section>
+					Why is WebGL used?
+					<section>
+						<li>Performance - WebGL is extremely fast and takes full advantage of hardware acceleration</li>
+						<aside class="notes">
+							Given the abundance of graphical display technologies available such as CSS, Canvas, SVG and plugin-based solutions 
+							like Silver Flight and Flash you may be wondering where WebGL fits in and whether you need to learn it, 
+							so let have a look at some of the reasons why you should:
+							Performance - WebGL is extremely fast and takes full advantage of hardware acceleration making it ideal for games and sophisticated visuals.
+						</aside>
+					</section>
+					<section>
+						<li>Tasks - it can perform and render functions that other technologies can't or more precisely can't so well</li>
+						<aside class="notes">
+							Tasks - it can perform and render functions that other technologies can't or more precisely can't so well. 
+							For example creating intricate lighting and reflecting material effects with SVG can be a real head scratcher but 
+							it could be easily pulled off using WebGL.
+						</aside>
+					</section>
+					<section>
+						<li>Shaders - to create complicated visual effects WebGL apps can use shaders.</li>
+						<aside class="notes">
+							Shaders - to create complicated visual effects WebGL apps can use shaders. 
+							A basic Shader may represent water or flames while a more complicated version could provide difficult effects.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					Thanks for your attention!
+					<aside class="notes">As you can see WebGL opens up a lot of doors for web developers, game designers, animators and visual artists. 
+						When used in conjunction with HTML5 features you may construct powerful and professional web browser-based apps. So, Thanks for your attention!</aside>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
